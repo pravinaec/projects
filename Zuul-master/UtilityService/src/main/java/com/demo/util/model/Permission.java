@@ -1,75 +1,65 @@
 package com.demo.util.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
-
-@Table(name="permission")
+@Table(name = "permission")
 @Entity
-public class Permission implements  Serializable{
-	
-	
-	private static final long serialVersionUID = 8087275050725156377L;
+public class Permission implements Serializable {
 
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="permission_id")
-	private int permissionId;
-	
-	@Column(name="permission_name")
-	private String permissionName;
-	
-	@JsonIgnore
-	@ManyToMany(mappedBy = "permissions", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-	private Set<Role> roles;
+    private static final long serialVersionUID = 8087275050725156377L;
 
-	public Permission() {
-		super();
-	}
 
-	public Permission(int permissionId, String permissionName) {
-		super();
-		this.permissionId = permissionId;
-		this.permissionName = permissionName;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "permission_id")
+    private int permissionId;
 
-	public int getPermissionId() {
-		return permissionId;
-	}
+    @Column(name = "permission_name")
+    private String permissionName;
 
-	public void setPermissionId(int permissionId) {
-		this.permissionId = permissionId;
-	}
+    @JsonIgnore
+    @ManyToMany(mappedBy = "permissions", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    private Set<Role> roles;
 
-	public String getPermissionName() {
-		return permissionName;
-	}
+    public Permission( ) {
+        super( );
+    }
 
-	public void setPermissionName(String permissionName) {
-		this.permissionName = permissionName;
-	}
+    public Permission( int permissionId, String permissionName ) {
+        super( );
+        this.permissionId = permissionId;
+        this.permissionName = permissionName;
+    }
 
-	public Set<Role> getRoles() {
-		return roles;
-	}
+    public int getPermissionId( ) {
+        return permissionId;
+    }
 
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
+    public void setPermissionId( int permissionId ) {
+        this.permissionId = permissionId;
+    }
 
-	
+    public String getPermissionName( ) {
+        return permissionName;
+    }
+
+    public void setPermissionName( String permissionName ) {
+        this.permissionName = permissionName;
+    }
+
+    public Set<Role> getRoles( ) {
+        return roles;
+    }
+
+    public void setRoles( Set<Role> roles ) {
+        this.roles = roles;
+    }
+
+
 }

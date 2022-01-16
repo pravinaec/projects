@@ -10,14 +10,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class DatabaseInit implements ApplicationListener<ApplicationReadyEvent> {
 
-	
-	Logger log=LoggerFactory.getLogger(DatabaseInit.class);
-	
-		
-	
-	public void onApplicationEvent(ApplicationReadyEvent event) {
-		
-		
+
+    Logger log = LoggerFactory.getLogger( DatabaseInit.class );
+
+
+    public void onApplicationEvent( ApplicationReadyEvent event ) {
+
+
 //		Utility u1=new Utility("Laptop");
 //		Utility u2=new Utility("Monitor");
 //		Utility u3=new Utility("TV");
@@ -28,6 +27,6 @@ public class DatabaseInit implements ApplicationListener<ApplicationReadyEvent> 
 //		uRepository.save(u3);
 //		uRepository.save(u4);
 //		
-		
-	}
+
+    }
 }

@@ -2,37 +2,36 @@ package com.demo.util.model;
 
 
 public class Car {
-	
-	private int id;
-	
-	private String name;
 
-	public Car() {
-		super();
-	}
+    private int id;
 
-	public Car(int id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
+    private String name;
 
-	public int getId() {
-		return id;
-	}
+    public Car( ) {
+        super( );
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public Car( int id, String name ) {
+        super( );
+        this.id = id;
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public int getId( ) {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	
+    public void setId( int id ) {
+        this.id = id;
+    }
+
+    public String getName( ) {
+        return name;
+    }
+
+    public void setName( String name ) {
+        this.name = name;
+    }
+
 
 }
